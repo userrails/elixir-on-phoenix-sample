@@ -9,3 +9,6 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+
+post = %HelloWorld.Post{title: "title", body: "deadfda"}
+HelloWorld.Repo.insert(post)
