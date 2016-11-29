@@ -34,12 +34,14 @@ defmodule HelloWorld.CommentController do
   end
 
   def edit(conn, %{"task_id" => task, "id" => id}) do
+    #IEx.pry
     comment = Repo.get!(Comment, id)
     changeset = Comment.changeset(comment)
-    render(conn, "edit.html", comment: comment, changeset: changeset)
+    render(conn, "edit.html", comment: comment, task: task, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "comment" => comment_params}) do
+  def update(conn, %{"id" => id, "task_id" => task, "comment" => comment_params}) do
+    #IEx.pry
     comment = Repo.get!(Comment, id)
     task = comment.task_id
     changeset = Comment.changeset(comment, comment_params)
@@ -48,9 +50,9 @@ defmodule HelloWorld.CommentController do
       {:ok, comment} ->
         conn
         |> put_flash(:info, "Comment updated successfully.")
-        |> redirect(to: task_comment_path(conn, :show, task))
+        |> redirect(to: task_comment_path(conn, :show, task, comment))
       {:error, changeset} ->
-        render(conn, "edit.html", comment: comment, changeset: changeset)
+        render(conn, "edit.html", comment: comment, task: task, changeset: changeset)
     end
   end
 

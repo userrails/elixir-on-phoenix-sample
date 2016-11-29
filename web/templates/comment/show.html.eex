@@ -14,5 +14,5 @@
 
 </ul>
 
-<%#= link "Edit", to: comment_path(@conn, :edit, @comment) %>
-<%#= link "Back", to: comment_path(@conn, :index) %>
+<%= link "Edit", to: task_comment_path(@conn, :edit, @task, @comment) %>
+<%= link "Back", to: task_comment_path(@conn, :index, @task) %>

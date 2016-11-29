@@ -1,1 +1,6 @@
-edit page
+<h2>Edit comment</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: task_comment_path(@conn, :update, @task, @comment), params: @conn.params %>
+
+<%= link "Back", to: task_comment_path(@conn, :index, @task) %>
