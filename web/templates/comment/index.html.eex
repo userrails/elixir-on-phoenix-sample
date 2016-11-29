@@ -1,0 +1,28 @@
+<h2>Listing comments of Tasks <%= @task %></h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Task</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for comment <- @comments do %>
+    <tr>
+      <td><%= comment.body %></td>
+      <td><%= comment.task_id %></td>
+
+      <td class="text-right">
+        <%#= link "Show", to: task_comment_path(@conn, :show, @task, comment), class: "btn btn-default btn-xs" %>
+        <%#= link "Edit", to: task_comment_path(@conn, :edit, @task, comment), class: "btn btn-default btn-xs" %>
+        <%#= link "Delete", to: task_comment_path(@conn, :delete, @task, comment), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New comment", to: task_comment_path(@conn, :new, @task) %>

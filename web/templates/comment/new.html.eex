@@ -1,0 +1,6 @@
+<h2>New comment</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: task_comment_path(@conn, :create, @task), params: @conn.params %>
+
+<%= link "Back", to: task_comment_path(@conn, :index, @task) %>

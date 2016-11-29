@@ -21,6 +21,9 @@ defmodule HelloWorld.Router do
     # additional resources we will use here
     resources "/posts", PostController
     resources "/dashboards", DashboardController, only: [:index]
+    resources "/tasks", TaskController do
+      resources "/comments", CommentController
+    end
   end
 
   # Other scopes may use custom stacks.
