@@ -16,10 +16,11 @@ defmodule HelloWorld.Router do
   scope "/", HelloWorld do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
-
+    # get "/", PageController, :index
+    get "/", DashboardController, :index 
     # additional resources we will use here
     resources "/posts", PostController
+    resources "/dashboards", DashboardController, only: [:index]
   end
 
   # Other scopes may use custom stacks.
