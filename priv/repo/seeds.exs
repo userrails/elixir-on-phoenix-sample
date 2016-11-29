@@ -14,7 +14,7 @@
 #post = %HelloWorld.Post{title: "title", body: "deadfda"}
 #HelloWorld.Repo.insert(post)
 
-for i <- 1..78300 do 
-	post = %HelloWorld.Post{title: "titafsdfdsleasdfdfsfds#{i}#{i}", body: "this is realadfdfsdsfsdffdly a descriptaadfsdsfdasfdfion#{i}#{i}"}
+for i <- 1..20 do 
+	post = %HelloWorld.Post{title: "title#{i}#{i}", body: "this is description#{i}#{i}"}
     HelloWorld.Repo.insert(post)
 end
