@@ -5,7 +5,10 @@ defmodule HelloWorld.CommentController do
   alias HelloWorld.Comment
 
   def index(conn, %{"task_id" => task}) do
-    comments = Repo.all(Comment)
+    #comments = Repo.all(Comment)
+    tsk = HelloWorld.Repo.get(HelloWorld.Task, conn.params["task_id"])
+    task_comments = HelloWorld.Repo.preload(tsk, :comments)
+    comments = task_comments.comments
     render(conn, "index.html", task: task, comments: comments)
   end
 
