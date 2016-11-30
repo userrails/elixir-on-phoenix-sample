@@ -24,6 +24,8 @@ defmodule HelloWorld.Router do
     resources "/tasks", TaskController do
       resources "/comments", CommentController
     end
+
+    resources "/registrations", RegistrationController, only: [:new, :create]
   end
 
   # Other scopes may use custom stacks.
