@@ -3,8 +3,8 @@ defmodule HelloWorld.Comment do
 
   schema "comments" do
     field :body, :string
-    field :task_id, :integer
-
+    #field :task_id, :integer
+    belongs_to :task, HelloWorld.Task
     timestamps()
   end
 

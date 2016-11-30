@@ -5,6 +5,8 @@ defmodule HelloWorld.Task do
     field :name, :string
     field :body, :string
 
+    has_many :comments, HelloWorld.Comment
+
     timestamps()
   end
 
