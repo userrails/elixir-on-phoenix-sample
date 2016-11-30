@@ -52,6 +52,9 @@ defmodule HelloWorld.Web do
       import HelloWorld.Router.Helpers
       import HelloWorld.ErrorHelpers
       import HelloWorld.Gettext
+
+      # make helper method available for views
+      import HelloWorld.Session, only: [current_user: 1, logged_in?: 1]
     end
   end
 
