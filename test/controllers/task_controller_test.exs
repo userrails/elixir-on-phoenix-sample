@@ -1,3 +1,4 @@
+require IEx
 defmodule HelloWorld.TaskControllerTest do
   use HelloWorld.ConnCase
 
