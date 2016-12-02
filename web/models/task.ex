@@ -5,7 +5,7 @@ defmodule HelloWorld.Task do
     field :name, :string
     field :body, :string
 
-    has_many :comments, HelloWorld.Comment
+    has_many :comments, HelloWorld.Comment, on_delete: :delete_all
 
     timestamps()
   end
