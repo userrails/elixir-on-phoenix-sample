@@ -3,7 +3,6 @@ defmodule HelloWorld.TaskTest do
   use HelloWorld.ModelCase
 
   alias HelloWorld.Task
-  # alias HelloWorld.Comment
 
   @valid_attrs %{body: "This is body of my task", name: "My first task"}
   @invalid_attrs %{}
