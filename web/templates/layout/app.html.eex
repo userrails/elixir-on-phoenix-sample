@@ -39,8 +39,8 @@
 
 
       <%= form_for @conn, search_path(@conn, :index), [method: :get, as: :search], fn f -> %>
-        <%= text_input f, :column, placeholder: "Column" %>
-        <%= text_input f, :keyword, placeholder: "Keyword" %>
+        <%= text_input f, :column, placeholder: "Column", minlength: 2, maxlength: 80 %>
+        <%= text_input f, :keyword, placeholder: "Keyword", minlength: 1, maxlength: 5 %>
         <%= submit "Search" %>
       <% end %>
     </div> <!-- /container -->
