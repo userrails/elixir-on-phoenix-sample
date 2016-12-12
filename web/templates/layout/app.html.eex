@@ -37,6 +37,12 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
+
+      <%= form_for @conn, search_path(@conn, :index), [method: :get, as: :search], fn f -> %>
+        <%= text_input f, :column, placeholder: "Column" %>
+        <%= text_input f, :keyword, placeholder: "Keyword" %>
+        <%= submit "Search" %>
+      <% end %>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

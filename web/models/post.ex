@@ -1,6 +1,8 @@
 defmodule HelloWorld.Post do
   use HelloWorld.Web, :model
 
+  import Ecto.Query
+
   schema "posts" do
     field :title, :string
     field :body, :string

@@ -1,0 +1,20 @@
+<h2>Listing posts</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+  <%= for post <- @posts do %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
